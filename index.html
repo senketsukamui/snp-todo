@@ -6,14 +6,25 @@
     <title>Todo</title>
     <link rel="icon" href="./assets/images/favicon.ico" />
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
   </head>
   <body>
     <div class="main-content">
       <div class="todo-block">
         <div class="todo-block__title">Todos</div>
-        <div class="todo-block__content"></div>
-        <div class="todo-block__buttons"></div>
+        <div class="todo-block__content">
+          <div class="todo-block__content__form">
+            <input
+              class="todo-input"
+              type="text"
+              placeholder="what you gonna do?"
+            />
+          </div>
+          <div class="todo-block__content__todos"></div>
+          <div class="todo-block__content__buttons"></div>
+        </div>
       </div>
     </div>
   </body>
+  <script src="index.js"></script>
 </html>

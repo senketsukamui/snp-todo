@@ -1,4 +1,37 @@
+@font-face {
+  font-family: "momcake";
+  src: url("../assets/fonts/MOMCAKE-Thin.otf");
+  font-weight: 400px; }
+
+@font-face {
+  font-family: "momcake";
+  src: url("../assets/fonts/MOMCAKE-Bold.otf");
+  font-weight: 700px; }
+
+@font-face {
+  font-family: "steelr";
+  src: url("../assets/fonts/SteelrDemo.ttf");
+  font-weight: 400px; }
+
 .main-content {
-  width: 100%; }
+  width: 600px;
+  margin: 0 auto; }
+
+.todo-block__title {
+  font-family: "momcake";
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center; }
+
+.todo-block__content {
+  -webkit-box-shadow: -1px 3px 15px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 15px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 15px 1px rgba(0, 0, 0, 0.75); }
+
+.todo-input {
+  font-size: 2rem;
+  font-family: "steelr";
+  padding: 5px; }
 
 /*# sourceMappingURL=index.css.map */
