@@ -27,16 +27,63 @@
     font-weight: bold;
     text-transform: capitalize;
     text-align: center;
+    padding-bottom: 15px;
   }
   &__content {
     -webkit-box-shadow: -1px 3px 15px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -1px 3px 15px 1px rgba(0, 0, 0, 0.75);
     box-shadow: -1px 3px 15px 1px rgba(0, 0, 0, 0.75);
+    &__form {
+      width: 100%;
+      padding: 5px;
+      display: flex;
+    }
   }
 }
 
 .todo-input {
   font-size: 2rem;
   font-family: "steelr";
+  padding-left: 10px;
+}
+
+.todo-complete-all {
+  width: 50px;
+  height: 50px;
+  padding: 0px 0px;
+}
+
+.todo {
+  display: flex;
+  font-family: "steelr";
+  font-size: 1.8rem;
   padding: 5px;
+  &__checkbox {
+    width: 38px;
+    height: 38px;
+    transition: 0.2s;
+  }
+
+  &__text {
+    padding: 5px 0px;
+    padding-left: 10px;
+    &_editable {
+      font-family: "steelr";
+      font-size: 1.5rem;
+    }
+  }
+
+  &__delete-button {
+    background-image: url(../assets/images/close.svg);
+    width: 38px;
+    height: 38px;
+    text-align: right;
+    display: flex;
+    align-self: center;
+  }
+  .completed & {
+    &__text {
+      text-decoration: line-through;
+    }
+  }
 }
