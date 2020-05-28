@@ -1,6 +1,17 @@
-const todos = document.querySelector(".todo-block__content__todos");
+const todosAll = document.querySelector(".todo-block__content__todos-all");
+const todosActive = document.querySelector(
+  ".todo-block__content__todos-active"
+);
+const todosCompleted = document.querySelector(
+  ".todo-block__content__todos-completed"
+);
+
 const todoInput = document.querySelector(".todo-input");
 const completeAll = document.querySelector(".todo-complete-all");
+const todosCount = document.querySelector(".count");
+const allSort = document.querySelector(".sorts__all");
+const activeSort = document.querySelector(".sorts__active");
+const completedSort = document.querySelector(".sorts__completed");
 
 const createElementWithProps = (elementType, props) => {
   const el = document.createElement(elementType);
@@ -10,6 +21,15 @@ const createElementWithProps = (elementType, props) => {
   });
   return el;
 };
+const changeTodosCount = () => {
+  let todoCompleted = 0;
+  for (node of todosAll.childNodes) {
+    if (!node.className.includes("completed")) {
+      todoCompleted += 1;
+    }
+  }
+  todosCount.innerHTML = `Todos left: ${todoCompleted}`;
+};
 
 completeAll.addEventListener("click", (e) => {
   const allTodos = document.querySelectorAll(".todo");
@@ -18,6 +38,7 @@ completeAll.addEventListener("click", (e) => {
     for (node of allTodos) {
       node.classList.add("completed");
       node.childNodes[0].checked = true;
+      changeTodosCount();
     }
     return;
   }
@@ -25,6 +46,7 @@ completeAll.addEventListener("click", (e) => {
     for (node of allTodos) {
       node.classList.remove("completed");
       node.childNodes[0].checked = false;
+      changeTodosCount();
     }
     return;
   }
@@ -34,6 +56,7 @@ completeAll.addEventListener("click", (e) => {
       if (!node.childNodes[0].checked) {
         node.classList.add("completed");
         node.childNodes[0].checked = true;
+        changeTodosCount();
       }
     }
     return;
@@ -67,6 +90,8 @@ const createNewTodo = (todoText) => {
     if (event.key === "Enter") {
       if (!document.querySelector(".todo__text_editable").value) {
         todo.remove();
+        changeTodosCount();
+        return;
       }
       text.innerHTML = e.target.value;
     }
@@ -74,21 +99,27 @@ const createNewTodo = (todoText) => {
   text.addEventListener("focusout", (e) => {
     if (!document.querySelector(".todo__text_editable").value) {
       todo.remove();
+      changeTodosCount();
+      return;
     }
     text.innerHTML = e.target.value;
   });
   deleteButton.addEventListener("click", (e) => {
     todo.remove();
+    changeTodosCount();
   });
   completed.addEventListener("click", (e) => {
     if (todo.classList[1] == "completed") {
       todo.classList.remove("completed");
+      changeTodosCount();
     } else {
       todo.classList.add("completed");
+      changeTodosCount();
     }
   });
-
-  todos.appendChild(todo);
+  todosAll.appendChild(todo);
+  // todosActive.appendChild(todo);
+  changeTodosCount();
 };
 
 todoInput.addEventListener("keypress", (event) => {
@@ -98,3 +129,17 @@ todoInput.addEventListener("keypress", (event) => {
     todoInput.value = "";
   }
 });
+
+// allSort.addEventListener("click", (e) => {
+//   todosAll.style.display = "flex";
+//   todosActive.style.display = "none";
+//   todosCompleted.style.display = "none";
+// });
+
+// activeSort.addEventListener("click", (e) => {
+//   todosActive.innerHTML = "";
+//   const allTodos = querySelectorAll(".todo:not(.completed)");
+//   for (node of allTodos) {
+//     todosActive.appendChild(node);
+//   }
+// });
