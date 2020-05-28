@@ -74,7 +74,9 @@
     display: flex;
     align-self: center; }
   .completed .todo__text {
-    text-decoration: line-through; }
+    text-decoration: line-through;
+    opacity: 0.5;
+    transition: 0.2s; }
 
 .sorts {
   display: flex;
@@ -83,6 +85,8 @@
   font-size: 1.2rem; }
   .sorts > div:not(:first-child) {
     padding-left: 1rem; }
+  .sorts > div {
+    cursor: pointer; }
 
 .count {
   font-family: "momcake";
@@ -90,6 +94,7 @@
 
 .clear {
   font-family: "momcake";
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  cursor: pointer; }
 
 /*# sourceMappingURL=index.css.map */

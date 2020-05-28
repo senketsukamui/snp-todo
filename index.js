@@ -12,6 +12,8 @@ const todosCount = document.querySelector(".count");
 const allSort = document.querySelector(".sorts__all");
 const activeSort = document.querySelector(".sorts__active");
 const completedSort = document.querySelector(".sorts__completed");
+const clearCompletedButton = document.querySelector(".clear");
+window.currentTab = "all";
 
 const createElementWithProps = (elementType, props) => {
   const el = document.createElement(elementType);
@@ -111,14 +113,19 @@ const createNewTodo = (todoText) => {
   completed.addEventListener("click", (e) => {
     if (todo.classList[1] == "completed") {
       todo.classList.remove("completed");
+      if (window.currentTab == "completed") {
+        e.target.parentNode.style.display = "none";
+      }
       changeTodosCount();
     } else {
       todo.classList.add("completed");
+      if (window.currentTab == "active") {
+        e.target.parentNode.style.display = "none";
+      }
       changeTodosCount();
     }
   });
   todosAll.appendChild(todo);
-  // todosActive.appendChild(todo);
   changeTodosCount();
 };
 
@@ -130,16 +137,37 @@ todoInput.addEventListener("keypress", (event) => {
   }
 });
 
-// allSort.addEventListener("click", (e) => {
-//   todosAll.style.display = "flex";
-//   todosActive.style.display = "none";
-//   todosCompleted.style.display = "none";
-// });
+const displayAll = () => {
+  for (node of todosAll.childNodes) {
+    node.style.display = "flex";
+  }
+};
 
-// activeSort.addEventListener("click", (e) => {
-//   todosActive.innerHTML = "";
-//   const allTodos = querySelectorAll(".todo:not(.completed)");
-//   for (node of allTodos) {
-//     todosActive.appendChild(node);
-//   }
-// });
+allSort.addEventListener("click", (e) => {
+  displayAll();
+  window.currentTab = "all";
+});
+
+activeSort.addEventListener("click", (e) => {
+  displayAll();
+  const todoToSort = document.querySelectorAll(".completed");
+  for (node of todoToSort) {
+    node.style.display = "none";
+  }
+  window.currentTab = "active";
+});
+
+completedSort.addEventListener("click", (e) => {
+  displayAll();
+  const todoToSort = document.querySelectorAll(".todo:not(.completed)");
+  for (node of todoToSort) {
+    node.style.display = "none";
+  }
+  window.currentTab = "completed";
+});
+
+clearCompletedButton.addEventListener("click", (e) => {
+  for (node of document.querySelectorAll(".completed")) {
+    node.remove();
+  }
+});

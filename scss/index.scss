@@ -92,6 +92,8 @@
   .completed & {
     &__text {
       text-decoration: line-through;
+      opacity: 0.5;
+      transition: 0.2s;
     }
   }
 }
@@ -104,6 +106,10 @@
   & > div:not(:first-child) {
     padding-left: 1rem;
   }
+
+  & > div {
+    cursor: pointer;
+  }
 }
 
 .count {
@@ -114,4 +120,5 @@
 .clear {
   font-family: "momcake";
   font-size: 1.2rem;
+  cursor: pointer;
 }
