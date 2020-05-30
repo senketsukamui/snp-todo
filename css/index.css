@@ -13,6 +13,9 @@
   src: url("../assets/fonts/SteelrDemo.ttf");
   font-weight: 400px; }
 
+body {
+  background: url("../assets/images/background.png"); }
+
 .main-content {
   width: 600px;
   margin: 0 auto; }
@@ -52,6 +55,7 @@
 
 .todo {
   display: flex;
+  justify-content: space-between;
   font-family: "steelr";
   font-size: 1.8rem;
   padding: 5px; }
@@ -60,23 +64,26 @@
     height: 38px;
     transition: 0.2s;
     cursor: pointer; }
+  .todo__checkbox:checked + .todo__text {
+    text-decoration: line-through;
+    opacity: 0.5; }
   .todo__text {
     padding: 5px 0px;
-    padding-left: 10px; }
+    padding-left: 10px;
+    width: 100%;
+    word-break: break-all;
+    transition: all 0.3s; }
     .todo__text_editable {
       font-family: "steelr";
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      width: 100%; }
   .todo__delete-button {
-    background-image: url(../assets/images/close.svg);
+    background-image: url("../assets/images/close.svg");
     width: 38px;
     height: 38px;
     text-align: right;
     display: flex;
     align-self: center; }
-  .completed .todo__text {
-    text-decoration: line-through;
-    opacity: 0.5;
-    transition: 0.2s; }
 
 .sorts {
   display: flex;
@@ -84,9 +91,12 @@
   font-family: "momcake";
   font-size: 1.2rem; }
   .sorts > div:not(:first-child) {
-    padding-left: 1rem; }
+    margin-left: 1rem; }
   .sorts > div {
-    cursor: pointer; }
+    cursor: pointer;
+    padding: 3px; }
+  .sorts div.active {
+    background-color: grey; }
 
 .count {
   font-family: "momcake";
