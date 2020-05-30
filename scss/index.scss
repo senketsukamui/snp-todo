@@ -20,6 +20,10 @@ body {
   background: url("../assets/images/background.png");
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .main-content {
   width: 600px;
   margin: 0 auto;
@@ -71,6 +75,11 @@ body {
   font-family: "steelr";
   font-size: 1.8rem;
   padding: 5px;
+  &:hover & {
+    &__delete-button {
+      display: flex;
+    }
+  }
   &__checkbox {
     width: 38px;
     height: 38px;
@@ -92,17 +101,20 @@ body {
     &_editable {
       font-family: "steelr";
       font-size: 1.5rem;
+      opacity: 1;
       width: 100%;
     }
   }
 
   &__delete-button {
-    background-image: url("../assets/images/close.svg");
+    background-image: url("../assets/images/delete.png");
+    background-size: 100% 100%;
     width: 38px;
     height: 38px;
     text-align: right;
-    display: flex;
     align-self: center;
+    display: none;
+    cursor: pointer;
   }
 }
 
@@ -111,6 +123,7 @@ body {
   justify-content: space-between;
   font-family: "momcake";
   font-size: 1.2rem;
+  transition: 0.3s;
   & > div:not(:first-child) {
     margin-left: 1rem;
   }
@@ -120,18 +133,93 @@ body {
     padding: 3px;
   }
 
+  & > div:hover {
+    transform: scale(1.1);
+  }
   & div.active {
-    background-color: grey;
+    border: 2px darkgrey solid;
+    border-radius: 15px;
   }
 }
 
 .count {
   font-family: "momcake";
   font-size: 1.2rem;
+  padding: 3px;
 }
 
 .clear {
   font-family: "momcake";
   font-size: 1.2rem;
   cursor: pointer;
+  padding: 3px;
+}
+
+@media screen and (max-width: 748px) and (min-width: 320px) {
+  .main-content {
+    width: 100%;
+  }
+
+  .todo-block {
+    &__title {
+      font-size: 3rem;
+    }
+    &__content {
+      &__buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .todo-input {
+    font-size: 1rem;
+  }
+
+  .todo-complete-all {
+    width: 20px;
+    height: 20px;
+  }
+
+  .todo {
+    font-size: 1.2rem;
+
+    &__checkbox {
+      width: 20px;
+      height: 20px;
+    }
+    &__delete-button {
+      display: flex;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover & {
+      display: initial;
+    }
+  }
+
+  .count {
+    font-size: 1rem;
+    padding: 1px;
+  }
+
+  .sorts {
+    font-size: 1rem;
+    & > div {
+      padding: 1px;
+    }
+    & div.active {
+      border: none;
+      text-decoration: underline;
+    }
+    & > div:hover {
+      transform: none;
+    }
+  }
+
+  .clear {
+    padding: 1px;
+    font-size: 1rem;
+  }
 }
