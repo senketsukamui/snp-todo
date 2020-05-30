@@ -145,6 +145,8 @@ body {
       height: 20px; }
     .todo:hover .todo {
       display: initial; }
+    .todo__text_editable {
+      font-size: 0.9rem; }
   .count {
     font-size: 1rem;
     padding: 1px; }

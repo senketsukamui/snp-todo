@@ -197,6 +197,12 @@ body {
     &:hover & {
       display: initial;
     }
+
+    &__text {
+      &_editable {
+        font-size: 0.9rem;
+      }
+    }
   }
 
   .count {
