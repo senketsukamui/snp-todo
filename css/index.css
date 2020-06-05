@@ -9,9 +9,14 @@
   font-weight: 700px; }
 
 @font-face {
-  font-family: "steelr";
-  src: url("../assets/fonts/SteelrDemo.ttf");
+  font-family: "noto";
+  src: url("../assets/fonts/19167.ttf");
   font-weight: 400px; }
+
+@font-face {
+  font-family: "noto";
+  src: url("../assets/fonts/17518.ttf");
+  font-weight: 700px; }
 
 body {
   background: url("../assets/images/background.png"); }
@@ -47,7 +52,7 @@ body {
 
 .todo-input {
   font-size: 2rem;
-  font-family: "steelr";
+  font-family: "noto";
   padding-left: 10px; }
 
 .todo-complete-all {
@@ -59,11 +64,13 @@ body {
 .todo {
   display: flex;
   justify-content: space-between;
-  font-family: "steelr";
+  font-family: "noto";
   font-size: 1.8rem;
   padding: 5px; }
   .todo:hover .todo__delete-button {
-    display: flex; }
+    opacity: 0.5; }
+    .todo:hover .todo__delete-button:hover {
+      opacity: 1; }
   .todo__checkbox {
     width: 38px;
     height: 38px;
@@ -79,18 +86,20 @@ body {
     word-break: break-all;
     transition: all 0.3s; }
     .todo__text_editable {
-      font-family: "steelr";
+      font-family: "noto";
       font-size: 1.5rem;
       opacity: 1;
       width: 100%; }
   .todo__delete-button {
     background-image: url("../assets/images/delete.png");
     background-size: 100% 100%;
-    width: 38px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
     text-align: right;
     align-self: center;
-    display: none;
+    display: flex;
+    opacity: 0;
+    transition: 0.2s;
     cursor: pointer; }
 
 .sorts {
