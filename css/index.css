@@ -130,7 +130,7 @@ body {
   cursor: pointer;
   padding: 3px; }
 
-@media screen and (max-width: 748px) and (min-width: 320px) {
+@media screen and (max-width: 748px) {
   .main-content {
     width: 100%; }
   .todo-block__title {
@@ -149,7 +149,7 @@ body {
       width: 20px;
       height: 20px; }
     .todo__delete-button {
-      display: flex;
+      opacity: 1;
       width: 20px;
       height: 20px; }
     .todo:hover .todo {
