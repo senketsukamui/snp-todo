@@ -66,6 +66,7 @@ body {
   font-size: 2rem;
   font-family: "noto";
   padding-left: 10px;
+  width: 100%;
 }
 
 .todo-complete-all {
@@ -165,6 +166,9 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   padding: 3px;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 @media screen and (max-width: 748px) {
@@ -239,5 +243,8 @@ body {
   .clear {
     padding: 1px;
     font-size: 1rem;
+    &:hover {
+      transition: none;
+    }
   }
 }

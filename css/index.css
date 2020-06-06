@@ -53,7 +53,8 @@ body {
 .todo-input {
   font-size: 2rem;
   font-family: "noto";
-  padding-left: 10px; }
+  padding-left: 10px;
+  width: 100%; }
 
 .todo-complete-all {
   width: 50px;
@@ -129,6 +130,8 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   padding: 3px; }
+  .clear:hover {
+    transform: scale(1.1); }
 
 @media screen and (max-width: 748px) {
   .main-content {
@@ -170,6 +173,8 @@ body {
       transform: none; }
   .clear {
     padding: 1px;
-    font-size: 1rem; } }
+    font-size: 1rem; }
+    .clear:hover {
+      transition: none; } }
 
 /*# sourceMappingURL=index.css.map */
