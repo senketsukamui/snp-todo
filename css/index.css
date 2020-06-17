@@ -75,7 +75,6 @@ body {
   .todo__checkbox {
     width: 38px;
     height: 38px;
-    transition: 0.2s;
     cursor: pointer; }
   .todo__checkbox:checked + .todo__text {
     text-decoration: line-through;
@@ -84,8 +83,7 @@ body {
     padding: 5px 0px;
     padding-left: 10px;
     width: 100%;
-    word-break: break-all;
-    transition: all 0.3s; }
+    word-break: break-all; }
     .todo__text_editable {
       font-family: "noto";
       font-size: 1.5rem;
@@ -100,19 +98,19 @@ body {
     align-self: center;
     display: flex;
     opacity: 0;
-    transition: 0.2s;
+    transition: opacity 0.2s;
     cursor: pointer; }
 
 .sorts {
   display: flex;
   justify-content: space-between;
   font-family: "momcake";
-  font-size: 1.2rem;
-  transition: 0.3s; }
+  font-size: 1.2rem; }
   .sorts > div:not(:first-child) {
     margin-left: 1rem; }
   .sorts > div {
     cursor: pointer;
+    transition: scale 0.3s;
     padding: 3px; }
   .sorts > div:hover {
     transform: scale(1.1); }
