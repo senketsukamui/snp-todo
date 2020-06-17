@@ -94,7 +94,6 @@ body {
   &__checkbox {
     width: 38px;
     height: 38px;
-    transition: 0.2s;
     cursor: pointer;
   }
 
@@ -108,7 +107,6 @@ body {
     padding-left: 10px;
     width: 100%;
     word-break: break-all;
-    transition: all 0.3s;
     &_editable {
       font-family: "noto";
       font-size: 1.5rem;
@@ -126,7 +124,7 @@ body {
     align-self: center;
     display: flex;
     opacity: 0;
-    transition: 0.2s;
+    transition: opacity 0.2s;
     cursor: pointer;
   }
 }
@@ -136,13 +134,13 @@ body {
   justify-content: space-between;
   font-family: "momcake";
   font-size: 1.2rem;
-  transition: 0.3s;
   & > div:not(:first-child) {
     margin-left: 1rem;
   }
 
   & > div {
     cursor: pointer;
+    transition: scale 0.3s;
     padding: 3px;
   }
 
