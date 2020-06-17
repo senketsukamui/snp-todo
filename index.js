@@ -1,11 +1,11 @@
-const todosAll = document.querySelector(".todo-block__content__todos-all");
-const todoInput = document.querySelector(".todo-input");
-const todoCounter = document.querySelector(".count");
-const completeAllButton = document.querySelector(".todo-complete-all");
-const clearCompletedButton = document.querySelector(".clear");
-const allSort = document.querySelector(".sorts__all");
-const activeSort = document.querySelector(".sorts__active");
-const completedSort = document.querySelector(".sorts__completed");
+const todosAll = document.querySelector("[all-todos]");
+const todoInput = document.querySelector("[todo-input]");
+const todoCounter = document.querySelector("[todos-count");
+const completeAllButton = document.querySelector("[complete-all]");
+const clearCompletedButton = document.querySelector("[clear-todos]");
+const allSort = document.querySelector("[all-sort]");
+const activeSort = document.querySelector("[active-sort]");
+const completedSort = document.querySelector("[completed-sort]");
 
 const createElementWithProps = (elementType, props) => {
   const el = document.createElement(elementType);
@@ -35,7 +35,6 @@ const render = (state) => {
       .filter(filters[state.renderType])
       .map((todo) => createToDo(todo.text, todo.completed, todo.id))
   );
-  console.log(JSON.stringify(state.todos));
   changeLocalStorage(JSON.stringify(state.todos));
   todoCounter.innerText = `Todos left: ${actions.getActiveTodos()}`;
 };

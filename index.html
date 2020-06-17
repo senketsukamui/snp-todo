@@ -14,24 +14,25 @@
         <div class="todo-block__title">Todos</div>
         <div class="todo-block__content">
           <div class="todo-block__content__form">
-            <button class="todo-complete-all">
+            <button class="todo-complete-all" complete-all>
               <img src="assets/images/down-arrow.svg" alt="" />
             </button>
             <input
               class="todo-input"
               type="text"
               placeholder="What you gonna do?"
+              todo-input
             />
           </div>
-          <div class="todo-block__content__todos-all"></div>
+          <div class="todo-block__content__todos-all" all-todos></div>
           <div class="todo-block__content__buttons">
-            <div class="count">Todos left: 0</div>
+            <div class="count" todos-count>Todos left: 0</div>
             <div class="sorts">
-              <div class="sorts__all active">All</div>
-              <div class="sorts__active">Active</div>
-              <div class="sorts__completed">Completed</div>
+              <div class="sorts__all active" all-sort>All</div>
+              <div class="sorts__active" active-sort>Active</div>
+              <div class="sorts__completed" completed-sort>Completed</div>
             </div>
-            <div class="clear">Clear completed</div>
+            <div class="clear" clear-todos>Clear completed</div>
           </div>
         </div>
       </div>
