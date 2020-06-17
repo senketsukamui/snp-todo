@@ -110,10 +110,10 @@ body {
     margin-left: 1rem; }
   .sorts > div {
     cursor: pointer;
-    transition: scale 0.3s;
     padding: 3px; }
   .sorts > div:hover {
-    transform: scale(1.1); }
+    transform: scale(1.1);
+    transition: transform 0.3s; }
   .sorts div.active {
     border: 2px darkgrey solid;
     border-radius: 15px; }
@@ -129,7 +129,8 @@ body {
   cursor: pointer;
   padding: 3px; }
   .clear:hover {
-    transform: scale(1.1); }
+    transform: scale(1.1);
+    transition: transform 0.2s; }
 
 @media screen and (max-width: 748px) {
   .main-content {
